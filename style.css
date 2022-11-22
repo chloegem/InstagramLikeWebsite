@@ -5,11 +5,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 body{
     min-height: 100vh;
     width: 1000%;
     background: black;
 }
+
 .containter{
     position: absolute;
     top: 50%;
@@ -21,6 +23,7 @@ body{
     border-radius: 7px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
+
 .containter .registration{
     display: none;
 }
@@ -61,4 +64,33 @@ body{
 
 .form input:focus{
     box-shadow: 0 1px 1 rgba(0, 0, 0, 0.2);
+}
+
+.form input.button{
+    color: white;
+    background: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1.7rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.form input.button:hover{
+    background: grey;
+}
+
+.signup{
+    font-size: 17px;
+    text-align: center;
+}
+
+.signup label{
+    color: grey;
+    cursor: pointer;
+}
+
+.signup label:hover{
+    text-decoration: underline;
 }
