@@ -8,11 +8,11 @@
 
 body{
     min-height: 100vh;
-    width: 1000%;
+    width: 100%;
     background: black;
 }
 
-.containter{
+.container{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -24,7 +24,7 @@ body{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.containter .registration{
+.container .registration{
     display: none;
 }
 
@@ -40,7 +40,7 @@ body{
     display: none;
 }
 
-.containter .form{
+.container .form{
     padding: 2rem;
 }
 
@@ -63,7 +63,7 @@ body{
 }
 
 .form input:focus{
-    box-shadow: 0 1px 1 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .form input.button{
