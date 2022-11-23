@@ -143,3 +143,58 @@ height: 100%;
     pointer-events: auto;
 }
 
+.sidebar li a:hover .links_name, .sidebar li a:hover i{
+    transition: all 0.5s ease;
+    color: #11101d;
+}
+
+.sidebar li i{
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+}
+
+.sidebar li.profile{
+    position: fixed;
+    height: 60px;
+    width: 80px;
+    left: 0;
+    top: 200px;
+    padding: 10px 14px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.sidebar.open li.profile{
+    width: 250px;
+}
+
+.sidebar li .profile-details{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.sidebar li.profile .name{
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 40px;
+    font-weight: 400;
+    color: white;
+    white-space: nowrap;
+    background: linear-gradient(to right, rgba(100,200,200,1), rgba(100,200,200,1)),linear-gradient(to right,rgba(255,0,0,1),rgba(255,0,180,1),rgba(0,100,200,1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.sidebar li.profile .name:hover{
+    background-size: 0 3px, 100% 3px;
+    cursor: pointer;
+}
+
+.sidebar .profile #log_out{
+    
+}
