@@ -8,4 +8,52 @@
 
 .sidebar{
     position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 80px;
+    background: #11101D;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5 ease;
+}
+
+.sidebar.open{
+    width: 250px;
+}
+
+.sidebar .logo-details{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.sidebar .logo-details #btn{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transition: all 0.4s ease;
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sidebar.open .logo-details #btn{
+    text-align: right;
+}
+
+.sidebar i{
+    color: white;
+    height: 60px;
+    min-width: 50px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.sidebar .nav-list{
+
 }
