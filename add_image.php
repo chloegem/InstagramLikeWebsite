@@ -30,7 +30,7 @@ if (in_array($img_ex_lc, $allowed_exs)) {
 	$new_img_name = uniqid("IMG-", true).'.'.$img_ex_lc;
 	$img_upload_path = 'uploads/'.$new_img_name;
 	move_uploaded_file($tmp_name, $img_upload_path);
-    $mysql = "INSERT INTO posts(image_url) VALUES ('$new_img_name')";
+    $mysql = "INSERT INTO images(image_url) VALUES ('$new_img_name')";
     mysqli_query($connection, $sql);    
     header("Location: view.php");
 
