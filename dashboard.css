@@ -213,6 +213,7 @@ height: 100%;
     background: none;
 }
 
+
 .home-section{
     position: relative;
     background: #e4e9f7;
@@ -242,3 +243,271 @@ height: 100%;
         display: none;
     }
 }
+
+/* 
+///////////////////////////
+///////////////////////////
+///////////////////////////
+    FEED POST CSS NOW
+///////////////////////////
+///////////////////////////
+///////////////////////////
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    
+    body {
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
+        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #fafafa;
+    }
+    
+    .navbar .container {
+    /* background-color: #555; */
+    padding: 15px 0;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 0 auto; */
+    }
+
+    main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    main .container {
+    position: relative;
+    margin-top: 60px;
+    width: 75%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /* background: #ddd; */
+    }
+    
+    .col-9 {
+    width: 65%;
+    margin-top: 30px;
+    }
+
+    
+    .col-9 .card {
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+    /* min-height: 400px; */
+    display: inline-block;
+    border: 1px solid rgba(7, 7, 7, 0.24);
+    }
+    
+    .col-9 .card .top {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    
+    .col-9 .card .bottom {
+    padding: 10px 20px;
+    }
+    
+    .col-9 .card .top .userDetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    }
+    
+    .profilepic {
+    display: inline-block;
+    cursor: pointer;
+    }
+    
+    .profilepic .profile_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, red, orange);
+    padding: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+    }
+    
+    .profilepic .profile_img .image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    }
+    
+    .profilepic .profile_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+    .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    
+    .col-9 .card .top .userDetails h3 {
+    /* width: 100%; */
+    font-size: 16px;
+    color: #4d4d4f;
+    font-weight: 500;
+    line-height: 1em;
+    }
+    
+    .col-9 .card .top .userDetails h3 span {
+    font-size: 0.75em;
+    }
+    
+    .col-9 .card .top .userDetails h3 span {
+    font-size: 0.75em;
+    }
+    
+    .dot {
+    transform: scale(0.6);
+    cursor: pointer;
+    }
+    
+    .imgBx {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    margin: 10px 0 15px;
+    }
+
+    .likes {
+    font-weight: 500;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #4d4d4f;
+    }
+    
+    .message {
+    font-weight: 400;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5em;
+    }
+    
+    .message b {
+    color: #262626;
+    }
+    
+    .message span {
+    cursor: pointer;
+    color: #1d92ff;
+    }
+
+    input.text {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    color: #262626;
+    background: none;
+    }
+    
+    input.text::placeholder {
+    color: #777;
+    }
+    
+    
+    a {
+    text-decoration: none;
+    }
+    
+    .hidden {
+    display: none;
+    }
+    
+    
+    @media screen and (max-width: 600px) {
+    .container {
+        width: 100% !important;
+    }
+    
+    .navbar .container {
+        padding: 15px 10px !important;
+    }
+    
+    .col-9 {
+        margin-top: 4px;
+        min-width: 100%;
+    }
+    
+    .col-9 .card {
+        margin-bottom: 0px;
+        width: 100%;
+        border: none;
+    }
+    }
+
+    /* RESPONSIVENESS */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+.container{
+  min-height: 100%;
+  min-width: 50%;
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container{
+        min-height: 100%;
+        min-width: 50%;
+      }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container{
+        min-height: 100%;
+        min-width: 50%;
+      }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container{
+        min-height: 100%;
+        min-width: 50%;
+      }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container{
+        min-height: 100%;
+        min-width: 50%;
+      }
+}
+

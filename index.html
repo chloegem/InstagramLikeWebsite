@@ -16,7 +16,7 @@
             <form action="#">
                 <input type="text" placeholder="Enter your Username">
                 <input type="password" placeholder="Enter your Password">
-                <input type="button" class="button" value="Login">
+                <input type="button" class="button" value="Login" href="dashboard.html">
             </form>
             <div class="signup">
                 <span class="signup">Don't have an account?
@@ -27,19 +27,24 @@
         <div class="registration form">
             <header>Signup with Gram</header>
             <form action="#">
-                <input type="text" placeholder="Enter your First Name">
-                <input type="text" placeholder="Enter your Last Name">
-                <input type="text" placeholder="Create your Username">
-                <input type="password" placeholder="Create a Password">
-                <input type="password" placeholder="Confirm your Password">
-                <input type="button" class="button" value="Sign Up">
+                <input id="first_name" type="text" placeholder="Enter your First Name">
+                <input id="last_name" type="text" placeholder="Enter your Last Name">
+                <input id="username" type="text" placeholder="Create your Username">
+                <input id="password" type="password" placeholder="Create a Password">
+                <input id="signup" type="button" class="button" value="Sign Up" >
             </form>
             <div class="signup">
                 <span class="signup">Already have an account?
                 <label for="check">Login</label>
             </span>
             </div>
+            <div id="response" class="response_font"></div>
         </div>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+<script src="script.js" type="text/javascript"></script>
+<script>
+    pages.loadFor("signup");
+</script>
 </html>
