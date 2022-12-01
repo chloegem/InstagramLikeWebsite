@@ -5,35 +5,44 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 include("connection.php");
 
-$response = [];
+if(isset($_POST["User_id"]) && $_POST["User_id"] != "" && isset($_POST["Image_id"]) && $_POST["Image_id"] != "" ){
+    $User_id = $_POST["User_id"];
+    $Image_id = $_POST["Image_id"];
 
-if (isset($_GET['User_id']) && isset($_GET['Image_id'])){
-
-    if (empty($user_id) || empty($image_id)) {
-        $response ["Error"] = "Some fields are empty";
-        echo json_encode($response);
-        exit();
-    }else{
-        $query1 = $mysqli->prepare("SELECT * FROM likes WHERE Image_id = ? AND User_id = ?");
-        $query1->bind_param("ii", $image_id, $user_id);
-        $query1->execute();
-        $result1 = $query1->get_result();
-
-        if (mysqli_num_rows($result1) == 0) {
-            $response ["Error"] = "Cannot Delete Like";
-            echo json_encode($response);
-            exit();
-        }else{
-            $query2 = $mysqli->prepare("DELETE FROM likes WHERE Image_id = ? AND User_id = ?");
-            $query2->bind_param("ii", $image_id, $user_id);
-            $query2->execute();
-            $response ["Success"] = "Like Deleted";
-            echo json_encode($response);
-            exit();
-        }
-    }
 }else{
-    $response ["Error"] = "Some field are required";
+     $response = [];
+     $response["success"] = false;   
+     echo json_encode($response);
+     return; 
+ }
+
+ $query = $mysqli->prepare("Select Is_liked from likes WHERE User_id = ? && Image_id =? ");
+ $query->bind_param("ii", $User_id, $Image_id);
+ $query->execute();
+ 
+ $array = $query->get_result();
+ 
+ $response = [];
+ $response_success = [];
+ 
+ while($likes = $array->fetch_assoc()){
+     $is_liked[] = $likes; 
+ }
+ 
+ if($is_liked){
+    $query = $mysqli->prepare("UPDATE likes SET likes= 0 WHERE User_id=? && Image_id=?");
+    $query->bind_param("ii", $User_id, $Image_id);
+    $query->execute();
+
+    $response["succes"] = "success";
     echo json_encode($response);
-    exit();
-}
+
+ }
+ else{ //liking the post for the first time
+    $query = $mysqli->prepare("INSERT INTO likes( User_id, Image_id, likes) VALUES ( ?, ?, 0)");
+    $query->bind_param("ii", $User_id, $Image_id);
+    $query->execute();
+
+    $response["succes"] = "success";
+    echo json_encode($response);
+ }
